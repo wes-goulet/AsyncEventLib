@@ -6,15 +6,8 @@
       <File FileName="AsyncEventLib.Tests/EventTests.cs" Line="11" Column="6" />
       <File FileName="AsyncEventLib.Tests/AsyncEventTests.cs" Line="25" Column="20" />
       <File FileName="AsyncEventLib/AsyncEventArgs.cs" Line="3" Column="1" />
-      <File FileName="AsyncEventLib/EventHandlerExtensions.cs" Line="19" Column="2" />
+      <File FileName="AsyncEventLib/EventHandlerExtensions.cs" Line="8" Column="96" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="AsyncEventLib" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

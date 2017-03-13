@@ -6,23 +6,16 @@ namespace AsyncEventLib
 {
     public class AsyncEventArgs : EventArgs
     {
-        public static AsyncEventArgs Create()
+        public AsyncEventArgs(List<Task> taskList) 
         {
-            return new AsyncEventArgs();
+            _handlerTasks = taskList;
         }
 
-        private AsyncEventArgs() { }
-
-        private readonly List<Task> _handlerTasks = new List<Task>();
+        private readonly List<Task> _handlerTasks;
 
         public void RegisterTask(Func<Task> taskFunc)
         {
             _handlerTasks.Add(taskFunc());
-        }
-
-        public Task AwaitHandlers()
-        {
-            return Task.WhenAll(_handlerTasks);
         }
     }
 }

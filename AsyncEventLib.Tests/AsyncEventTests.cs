@@ -25,15 +25,13 @@ namespace AsyncEventLib.Tests
                 });
             };
 
-            var asyncArgs = AsyncEventArgs.Create();
-            TestEvent?.Invoke(this, asyncArgs);
-            await asyncArgs.AwaitHandlers();
+            await TestEvent.InvokeAsync(this);
 
             asyncMethodDone.Should().BeTrue();
         }
 
         [TestMethod]
-        public void Test_Event_DoesWaitOnSync()
+        public async Task Test_Event_DoesWaitOnSync()
         {
             var asyncMethodDone = false;
 
@@ -43,8 +41,7 @@ namespace AsyncEventLib.Tests
                 asyncMethodDone = true;
             };
 
-			var asyncArgs = AsyncEventArgs.Create();
-            TestEvent?.Invoke(this, asyncArgs);
+            await TestEvent.InvokeAsync(this);
 
             asyncMethodDone.Should().BeTrue();
         }
