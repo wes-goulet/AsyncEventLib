@@ -7,9 +7,17 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/AsyncEventLib.Tests/AsyncEventLib.Tests.csproj"
+                "${workspaceRoot}/AsyncEventLib.sln"
             ],
             "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "test",
+            "args": [
+                "${workspaceRoot}/AsyncEventLib.Tests/AsyncEventLib.Tests.csproj"
+            ],
+            "isTestCommand": true,
             "problemMatcher": "$msCompile"
         }
     ]

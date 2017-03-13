@@ -7,12 +7,12 @@ using System.Threading;
 namespace AsyncEventLib.Tests
 {
     [TestClass]
-    public class EventTests
+    public class AsyncEventTests
     {
-        private event EventHandler TestEvent;
+        private event EventHandler<AsyncEventArgs> TestEvent;
 
         [TestMethod]
-        public void Test_Event_DoesNotWaitOnAsync()
+        public void Test_Event_DoesWaitOnAsync()
         {
             var asyncMethodDone = false;
 

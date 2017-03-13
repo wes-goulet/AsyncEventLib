@@ -8,7 +8,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceRoot}/AsyncEventLib.Tests/bin/Debug/netcoreapp1.1/AsyncEventLib.Tests.dll",
             "args": [],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/AsyncEventLib.Tests",
             "externalConsole": false,
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart"
