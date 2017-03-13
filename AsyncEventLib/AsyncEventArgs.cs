@@ -15,9 +15,9 @@ namespace AsyncEventLib
 
         private readonly List<Task> _handlerTasks = new List<Task>();
 
-        public void RegisterTask(Task task)
+        public void RegisterTask(Func<Task> taskFunc)
         {
-            _handlerTasks.Add(task);
+            _handlerTasks.Add(taskFunc());
         }
 
         public Task AwaitHandlers()

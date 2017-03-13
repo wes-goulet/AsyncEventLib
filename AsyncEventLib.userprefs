@@ -1,23 +1,17 @@
-﻿<Properties StartupConfiguration="{8602D0C4-414F-493F-9C2C-D6FACCB600B8}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AsyncEventLib.Tests/EventTests.cs">
+﻿<Properties StartupConfiguration="{8602D0C4-414F-493F-9C2C-D6FACCB600B8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AsyncEventLib/EventHandlerExtensions.cs">
     <Files>
-      <File FileName="AsyncEventLib/Class1.cs" Line="6" Column="20" />
       <File FileName="AsyncEventLib.Tests/AsyncEventLib.Tests.csproj" Line="1" Column="1" />
       <File FileName="AsyncEventLib/AsyncEventLib.csproj" Line="1" Column="1" />
-      <File FileName="AsyncEventLib.Tests/EventTests.cs" Line="2" Column="14" />
+      <File FileName="AsyncEventLib.Tests/EventTests.cs" Line="11" Column="6" />
+      <File FileName="AsyncEventLib.Tests/AsyncEventTests.cs" Line="25" Column="20" />
+      <File FileName="AsyncEventLib/AsyncEventArgs.cs" Line="3" Column="1" />
+      <File FileName="AsyncEventLib/EventHandlerExtensions.cs" Line="19" Column="2" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="AsyncEventLib" expanded="True">
-            <Node name="AsyncEventLib.Tests" expanded="True" selected="True">
-              <Node name="AsyncEventLib" expanded="True">
-                <Node name="Tests" expanded="True">
-                  <Node name="EventTests" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="AsyncEventLib" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

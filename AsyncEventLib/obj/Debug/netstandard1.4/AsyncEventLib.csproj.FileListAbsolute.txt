@@ -1,7 +1,0 @@
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/bin/Debug/netstandard1.4/AsyncEventLib.deps.json
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/bin/Debug/netstandard1.4/AsyncEventLib.dll
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/bin/Debug/netstandard1.4/AsyncEventLib.pdb
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/obj/Debug/netstandard1.4/AsyncEventLib.AssemblyInfo.cs
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/obj/Debug/netstandard1.4/AsyncEventLib.dll
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/obj/Debug/netstandard1.4/AsyncEventLib.pdb
-/Users/wes/Source/Repos/AsyncEventLib/AsyncEventLib/obj/Debug/netstandard1.4/AsyncEventLib.csprojResolveAssemblyReference.cache

@@ -12,19 +12,24 @@ namespace AsyncEventLib.Tests
         private event EventHandler<AsyncEventArgs> TestEvent;
 
         [TestMethod]
-        public void Test_Event_DoesWaitOnAsync()
+        public async Task Test_Event_DoesWaitOnAsync()
         {
             var asyncMethodDone = false;
 
-            TestEvent += async (sender, args) =>
+            TestEvent += (sender, args) =>
             {
-                await Task.Delay(50);
-                asyncMethodDone = true;
+                args.RegisterTask(async () =>
+                {
+					await Task.Delay(50);
+					asyncMethodDone = true;
+                });
             };
 
-            TestEvent?.Invoke(this, EventArgs.Empty);
+            var asyncArgs = AsyncEventArgs.Create();
+            TestEvent?.Invoke(this, asyncArgs);
+            await asyncArgs.AwaitHandlers();
 
-            asyncMethodDone.Should().BeFalse();
+            asyncMethodDone.Should().BeTrue();
         }
 
         [TestMethod]
@@ -38,7 +43,8 @@ namespace AsyncEventLib.Tests
                 asyncMethodDone = true;
             };
 
-            TestEvent?.Invoke(this, EventArgs.Empty);
+			var asyncArgs = AsyncEventArgs.Create();
+            TestEvent?.Invoke(this, asyncArgs);
 
             asyncMethodDone.Should().BeTrue();
         }
