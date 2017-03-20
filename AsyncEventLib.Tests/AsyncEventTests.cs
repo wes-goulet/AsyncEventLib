@@ -11,6 +11,18 @@ namespace AsyncEventLib.Tests
     {
         private event EventHandler<AsyncEventArgs> TestEvent;
 
+        [TestInitializeAttribute]
+        public void TestInit()
+        {
+            if (TestEvent != null)
+            {
+                foreach (var d in TestEvent.GetInvocationList())
+                {
+                    TestEvent -= (d as EventHandler<AsyncEventArgs>);
+                }
+            }
+        }
+
         [TestMethod]
         public async Task Test_Event_DoesWaitOnAsync()
         {
@@ -18,16 +30,32 @@ namespace AsyncEventLib.Tests
 
             TestEvent += (sender, args) =>
             {
-                args.RegisterTask(async () =>
+                args.RegisterFuncToBeAwaitedByEventPublisher(async () =>
                 {
-					await Task.Delay(50);
-					asyncMethodDone = true;
+                    await Task.Delay(50);
+                    asyncMethodDone = true;
                 });
             };
 
             await TestEvent.InvokeAsync(this);
 
             asyncMethodDone.Should().BeTrue();
+        }
+
+        [TestMethod]
+        public async Task Test_Event_NonRegisteredCodeDoesNotGetAwaited()
+        {
+            var asyncMethodDone = false;
+
+            TestEvent += async (sender, args) =>
+            {
+                await Task.Delay(50);
+                asyncMethodDone = true;
+            };
+
+            await TestEvent.InvokeAsync(this);
+
+            asyncMethodDone.Should().BeFalse();
         }
 
         [TestMethod]
@@ -44,6 +72,12 @@ namespace AsyncEventLib.Tests
             await TestEvent.InvokeAsync(this);
 
             asyncMethodDone.Should().BeTrue();
+        }
+
+        [TestMethod]
+        public async Task Test_Event_NoSubscribers()
+        {
+            await TestEvent.InvokeAsync(this);
         }
     }
 }
