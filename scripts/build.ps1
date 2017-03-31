@@ -14,5 +14,5 @@ dotnet test "$testCsproj"
 if(!$?) { exit $LASTEXITCODE; }
 
 "building solution"
-dotnet build -c Release
+dotnet build --configuration Release
 if(!$?) { exit $LASTEXITCODE; }

@@ -17,11 +17,9 @@ addons:
     packages:
     - powershell
 
-# before_script:
-#   - powershell --version
-
 script:
-  powershell scripts/build.ps1
+  - powershell scripts/build.ps1
+  - if [ "$TRAVIS_TAG" != "" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      powershell scripts/publish.ps1 "$TRAVIS_TAG" || travis_terminate 1;
+    fi
 
-after_script:
-  powershell scripts/publish.ps1
