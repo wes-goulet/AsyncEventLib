@@ -19,7 +19,7 @@ namespace AsyncEventLib
         {
             if(handler == null)
             {
-                return Task.FromResult(0);
+                return Task.CompletedTask;
             }
 
             var taskList = new List<Task>();
